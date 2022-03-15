@@ -19,6 +19,39 @@ vim.cmd [[
 let g:ale_disable_lsp = 1
 let g:python3_host_prog = 'python3'
 
+set clipboard=""
+set cmdheight=2
+" set ruler
+set nosmartindent
+set tabstop=2
+set softtabstop=2
+set infercase
+set copyindent
+set preserveindent
+set linebreak
+set breakindent
+set updatecount=100
+set updatetime=275
+set scrolloff=2
+set sidescrolloff=8
+set numberwidth=4
+set foldlevel=2
+set foldlevelstart=2
+set foldcolumn=auto:5
+set showmatch
+set matchtime=3
+set colorcolumn=121
+set confirm
+set guifont="monospace:h17"
+set lazyredraw
+set list
+set pumheight=10
+set pumwidth=35
+set report=0
+" let mapleader="\\"
+" :let mapleader=""
+" :let maplocalleader=""
+
 set iskeyword+=-
 
 " colorscheme morning
