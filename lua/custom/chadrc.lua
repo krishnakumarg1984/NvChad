@@ -13,11 +13,22 @@ M.ui = {
   italic_comments = true,
 }
 
-M.plugins = {
-  status = {
-    better_escape = false,
-  },
+local default_plugins_to_keep = {
+  better_escape = false,
 }
+
+M.plugins = {
+  status = default_plugins_to_keep,
+}
+
+local custom_plugins_present, userPlugins = pcall(require, "custom.plugins")
+if custom_plugins_present then
+  M.plugins = {
+    status = default_plugins_to_keep,
+    install = userPlugins,
+  }
+end
+
 
 M.mappings = {
    misc = {
