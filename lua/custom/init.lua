@@ -6,52 +6,66 @@ vim.cmd [[
 let g:ale_disable_lsp = 1
 let g:python3_host_prog = 'python3'
 
+set backupdir-=.
+set backupext='vimbackup'
+
 set clipboard=""
 set cmdheight=2
-" set ruler
-set nosmartindent
-set tabstop=2
-set softtabstop=2
-set infercase
-set copyindent
-set preserveindent
-set linebreak
-set breakindent
-set updatecount=100
-set updatetime=275
-set scrolloff=2
-set sidescrolloff=8
-set numberwidth=4
-set foldlevel=2
-set foldlevelstart=2
-set foldcolumn=auto:5
-set showmatch
-set matchtime=3
 set colorcolumn=121
 set confirm
+
+set foldcolumn=auto:5
+set foldlevel=2
+set foldlevelstart=2
+
 set guifont="monospace:h17"
+set infercase
+set iskeyword+=-
 set lazyredraw
 set list
+
+set copyindent
+set nosmartindent
+set preserveindent
+
 set pumheight=10
 set pumwidth=35
+
+set relativenumber
+set numberwidth=4
+
 set report=0
+
+set showmatch
+set matchtime=3
+
+set scrolloff=2
+set sidescrolloff=8
+
+set softtabstop=2
+set tabstop=2
+
+set showtabline=2
+
+set updatecount=100
+set updatetime=275
+
+set winaltkeys=no
+
+" set ruler
+" set whichwrap+=<,>,[,],h,l
 " let mapleader="\\"
 " :let mapleader=""
 " :let maplocalleader=""
 
-set iskeyword+=-
-
-" colorscheme morning
-" set backupdir-=.
-" set whichwrap+=<,>,[,],h,l
-set backupext='vimbackup'
-
 " Linebreak settings (((
 
+set linebreak
 let &showbreak='→ '
 " let &showbreak='↪ '
 " let &showbreak='… '
 " set breakat=\ \ ;:,!? " which characters might cause a line break if 'linebreak' is on.
+set breakindent
 set breakindentopt=shift:2,sbr
 
 " )))
@@ -77,6 +91,7 @@ set fillchars+=foldopen:▾,foldsep:│,foldclose:▸ " https://vi.stackexchange
 set wildignorecase      " If supported, make wildmenu completions case-insensitive
 
 " Wildignore and low-priority suffixes/filetype-extensions (((
+
 " Ignore the following type of files when tab completing. " There are certain files that we would never want to edit with Vim. Wildmenu will ignore files with these extensions.
 set wildignore+=*.4ct,*.4tc,*.7z,*.a,*.acn,*.acr,*.alg,*.auxlock,*.backup,*.bcf,*.beam,*.bin,*.blg,*.bmp,*.brf,*.cb,*.cb2,*.class,*.cpt,*.cut,*.dats,*.db,*.dll,*.dmg,*.docx,*.dpth,*.DS_Store,*.dx64fsl,*.el,*.end,*.ent,*.eps,*.exe,*.fasl,*.fdb_latexmk,*.fff,*.fls,*.flv,*.fmt,*.fot,*.gaux,*.gem,*.gif,*.git,*.glg,*.glo,*.gls,*.glsdefs,*.glstex,*.gtex,*.hg,*.hst,*.idv,*.idx,*.ilg,*.img,*.ind,*.ini,*.ist,*.jpeg,*.JPG,*.la,*.lb,*.lg,*.listing,*.lnk,*.loa,*.load,*.loe,*.lof,*.lol,*.lot,*.lox,*.ltjruby,*.luac,*.lx64fsl,*.maf,*.manifest,*.mf,*.mkv,*.mlf,*.mlt,*.mo,*.mod,*.mp,*.mp4,*.mw,*.nav,*.nlg,*.nlo,*.nls,*.o,*.obj,*.orig,*.pax,*.pdf,*.pdfpc,*.pdfsync,*.png,*.pre,*.ps,*.psd,*.pyc,*.pyg,*.pyo,*.pytxcode,*.rar,*.rbc,*.rbo,*.run.xml,*.save,*.snm,*.so,*.soc,*.sout,*.spl,*.sqlite,*.sta,*.svg,*.svn,*.sw?,*.swp,*.sympy,*.synctex,*.synctex.gz,*.tar,*.tar.bz2,*.tar.gz,*.tar.xz,*.tdo,*.texpadtmp,*.tfm,*.thm,*.tiff,*.toc,*.trc,*.ttt,*.upa,*.upb,*.ver,*.vrb,*.wrt,*.xcp,*.xdv,*.xdy,*.xlsx,*.xmpi,*.xpm,*.xref,*.xyc,*.xz,*.zip,*/.bundle/*,*/.cls,*/.fdb*/,*/.git/*,*/.glo,*/.ist,*/.sass-cache/*,*/.svn/*,*/.toc,*/.vim$,*/__pycache__/*,*/builds/*,*/dist*/*,*/node_modules/*,*/target/*,*/tmp/*,*/vendor/cache/*,*/vendor/gems/*,*/venv/*,*\\tmp\\*,*~,./tags,._*,.git/,.git/*,.idea/,\~$,_site,bower_components/*,CVS,CVS/*,media/*,migrations,tags,types_*taghl,vendor/cache/**,vendor/rails/**,
 
@@ -91,6 +106,7 @@ set suffixes+=*.info,*.aux,*.log,*/.log,*.dvi,*.bbl,*.out,*/.out,*.old,*.bak
 " set complete+=U,s,k,kspell,]
 
 " Custom 'Underline' command using user-defined function (((
+
 " https://vim.fandom.com/wiki/Underline_using_dashes_automatically
 function! s:Underline(chars) abort
     let chars = empty(a:chars) ? '-' : a:chars
@@ -138,7 +154,7 @@ command! -nargs=? Underline call s:Underline(<q-args>)
   let g:did_install_syntax_menu   = 1
   let g:did_indent_on             = 1
   " let g:do_filetype_lua           = 1
-  " let g:did_load_filetypes        = 1
+  let g:did_load_filetypes        = 1
   let g:skip_loading_mswin        = 1
   let g:loaded_matchparen         = 1
 	let g:loaded_remote_plugins     = 1
@@ -325,7 +341,7 @@ endif
 
 set tags=~/.cache/tags
 
-let g:cursorhold_updatetime = 100
+" let g:cursorhold_updatetime = 100
 
 ]]
 
