@@ -347,8 +347,17 @@ set tags=~/.cache/tags
 
 -- )))
 
+require "custom.plugins.filetype"
+
+require "custom.keymaps"
+require "custom.autocommands"
+require "custom.plugins.project"
+require "custom.plugins.hlslens"
+require "custom.plugins.pretty_fold"
+require "custom.plugins.range_highlight"
+
 -- MAPPINGS
-local map = require("core.utils").map
+-- local map = require("core.utils").map
 
 -- NOTE: the 4th argument in the map function is be a table i.e options but its most likely un-needed so dont worry about it
 

@@ -9,7 +9,8 @@ M.options = {
 -- make sure you maintain the structure of `core/default_config.lua` here,
 
 M.ui = {
-  theme = "tokyonight",
+  -- theme = "everblush",
+  theme = "gruvchad",
   italic_comments = true,
 }
 
