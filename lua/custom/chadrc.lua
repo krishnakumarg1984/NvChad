@@ -10,7 +10,7 @@ M.options = {
 
 M.ui = {
   -- theme = "everblush",
-  theme = "gruvchad",
+  theme = "tomorrow-night",
   italic_comments = true,
 }
 
