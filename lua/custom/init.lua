@@ -355,6 +355,7 @@ require "custom.plugins.project"
 require "custom.plugins.hlslens"
 require "custom.plugins.pretty_fold"
 require "custom.plugins.range_highlight"
+require "custom.plugins.mini"
 
 -- MAPPINGS
 -- local map = require("core.utils").map
