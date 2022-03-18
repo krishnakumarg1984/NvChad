@@ -72,13 +72,6 @@ return packer.startup(function(use)
 
   -- )))
 
-  use { "machakann/vim-sandwich", keys = { "sa", "sr", "sd" } }
-  use { "tpope/vim-repeat", after = { "vim-sandwich" } }
-  use { "tyru/capture.vim", cmd = { "Capture" } }
-
-  -- use { "dstein64/vim-startuptime", cmd = { "StartupTime" } }
-  -- use { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } }
-
   -- AsyncTask and AsyncRun (((
 
   -- use { "skywind3000/asyncrun.vim", cmd = { "AsyncRun!", "AsyncRun", "AsyncStop!", "AsyncStop" } }
@@ -163,6 +156,7 @@ return packer.startup(function(use)
 
   use { "klen/nvim-config-local" }  -- , event = { "CursorHold" } }
   use { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } }
+  -- https://github.com/Shatur/neovim-session-manager
   -- use { "nyngwang/NeoZoom.lua", cmd = { "NeoVSplit", "NeoSplit", "NeoZoomToggle" } }
 
   -- )))

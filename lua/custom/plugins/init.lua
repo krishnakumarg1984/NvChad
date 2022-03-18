@@ -5,8 +5,11 @@ return {
   { "lervag/vimtex", ft = "tex" },
   { "svban/YankAssassin.vim", event = { "CursorHold" } },
   { "tyru/capture.vim", cmd = { "Capture" } },
+  -- { "dstein64/vim-startuptime", cmd = { "StartupTime" } },
+  -- { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } },
   -- { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
   { "ahmedkhalf/project.nvim" },  -- , event = { "CursorHold" } }
+  { "pianocomposer321/yabs.nvim" },
   { "antoinemadec/FixCursorHold.nvim" }, -- This is needed to fix lsp doc highlight
   { "anuvyklack/pretty-fold.nvim" },
   { "ellisonleao/glow.nvim", ft = { "markdown", "lsp_markdown", "rmd"}, cmd = { "Glow", "GlowInstall" } },
