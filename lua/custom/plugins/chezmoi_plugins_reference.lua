@@ -90,33 +90,10 @@ return packer.startup(function(use)
 
   -- Other lua plugins (((
 
-  use { "antoinemadec/FixCursorHold.nvim" } -- This is needed to fix lsp doc highlight
-  use { "nathom/filetype.nvim" }
-  use { "ahmedkhalf/project.nvim" }  -- , event = { "CursorHold" } }
-  use { "kyazdani42/nvim-web-devicons" }
-  use { "kyazdani42/nvim-tree.lua" }  -- , cmd = { "NvimTreeToggle", "NvimTreeRefresh", "NvimTreeFindFile", "NvimTreeOpen", "NvimTreeClose", "NvimTreeFocus", "NvimTreeFindFileToggle", "NvimTreeResize", "NvimTreeCollapse", "NvimTreeCollapseKeepBuffers" } }
   use { "akinsho/toggleterm.nvim", cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" } }
 
   
-  use { "lukas-reineke/indent-blankline.nvim" }  --, cmd = { "IndentBlanklineEnable", "IndentBlanklineDisable", "IndentBlanklineToggle", "IndentBlanklineRefresh", "IndentBlanklineRefreshScroll", }, } -- slow plugin (try and restrict to a few filetypes)
-  use { "nvim-lualine/lualine.nvim" }  --, event = { "CursorHold" } }
-  use { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#" } }
-
   -- Telescope (((
-
-  use { "nvim-telescope/telescope.nvim" } -- , cmd = { "Telescope" } }  --, event = { "CursorHold" } }
-
-  -- cheatsheet.nvim (((
-  use {
-    "sudormrfbin/cheatsheet.nvim",
-    requires = {
-      { "nvim-telescope/telescope.nvim" },
-      { "nvim-lua/popup.nvim" },
-      { "nvim-lua/plenary.nvim" },
-    },
-    cmd = { "Cheatsheet", "CheatsheetEdit" },
-  }
-  -- )))
 
   -- octo.nvim ((( -- or  nvim-telescope/telescope-github.nvim
   use {
@@ -147,15 +124,6 @@ return packer.startup(function(use)
 
   -- )))
 
-  use { "ellisonleao/glow.nvim", ft = { "md", "Rmd", "rmarkdown", "Rmarkdown" }, cmd = { "Glow", "GlowInstall" } }
-  use { "anuvyklack/pretty-fold.nvim" }
-  use { "winston0410/range-highlight.nvim",  requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } } -- , event = { "CmdlineEnter", "CmdwinLeave" } }
-  use { "karb94/neoscroll.nvim" }  -- , keys = { "C-d" } }
-
-  
-
-  use { "klen/nvim-config-local" }  -- , event = { "CursorHold" } }
-  use { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } }
   -- https://github.com/Shatur/neovim-session-manager
   -- use { "nyngwang/NeoZoom.lua", cmd = { "NeoVSplit", "NeoSplit", "NeoZoomToggle" } }
 
@@ -163,18 +131,8 @@ return packer.startup(function(use)
 
   -- Autocompletion and snippets support (((
 
-  use { "L3MON4D3/LuaSnip" } -- , event = "InsertEnter" } -- snippet engine
-  -- https://github.com/akinsho/dotfiles/blob/main/.config/nvim/lua/as/plugins/init.lua
-  use { "hrsh7th/nvim-cmp" }  -- , module = 'cmp', event = 'InsertEnter' } -- The completion plugin
-  use { "hrsh7th/cmp-path" } -- path completions
-  use { "hrsh7th/cmp-buffer" } -- buffer completions
   use { "hrsh7th/cmp-cmdline" } -- cmdline completions
-  use { "hrsh7th/cmp-nvim-lsp" }
-  use { "hrsh7th/cmp-nvim-lua" }
   use { "quangnguyen30192/cmp-nvim-tags" }
-  use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
-  use { "saadparwaiz1/cmp_luasnip" } -- , event = "InsertEnter" } -- snippet completions
-  use { "windwp/nvim-autopairs", after = "nvim-cmp" }  --, event = { "CursorHold" } } --, event = "InsertEnter" } -- , after = "nvim-cmp" } -- Autopairs, integrates with both cmp (and treesitter?)
 
   -- )))
 
@@ -189,30 +147,18 @@ return packer.startup(function(use)
   cmd = "NullLsLoad",
   module = "null-ls",
   }
-  use { "ray-x/lsp_signature.nvim", requires = "kyazdani42/nvim-web-devicons", after = "nvim-lspconfig" } -- event = { "InsertEnter" }, }
   use { "tami5/lspsaga.nvim",  after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
 
   
   use { "folke/trouble.nvim", cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" } }
   use { "stevearc/aerial.nvim" }  -- , cmd = { "AerialToggle", "AerialToggle!", "AerialOpen", "AerialOpen!", "AerialClose", "AerialPrev", "AerialNext", "AerialPrevUp", "AerialNextUp", "AerialGo", "AerialTreeOpen", "AerialTreeOpen!", "AerialTreeClose", "AerialTreeClose!", "AerialTreeToggle", "AerialTreeToggle!", "AerialTreeOpenAll", "AerialTreeCloseAll", "AerialTreeSyncFolds", "AerialInfo" } }  -- , event = { "CursorHold" } }
-  
 
   -- use { "narutoxy/dim.lua", requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" }, }
 
   -- )))
 
-  use { "folke/which-key.nvim" }  -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
-
 -- )))
 
-  -- Automatically set up your configuration after cloning packer.nvim (((
-
-  -- Put this at the end after all plugins
-  if PACKER_BOOTSTRAP then
-    require("packer").sync()
-  end
-
-  -- )))
 end)
 
 -- )))

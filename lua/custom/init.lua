@@ -356,6 +356,10 @@ require "custom.plugins.hlslens"
 require "custom.plugins.pretty_fold"
 require "custom.plugins.range_highlight"
 require "custom.plugins.mini"
+require "custom.plugins.neoscroll"
+require "custom.plugins.config_local"
+require "custom.plugins.nvim_cmake"
+require "custom.plugins.whichkey"
 
 -- MAPPINGS
 -- local map = require("core.utils").map
