@@ -43,8 +43,10 @@ keymap("n", "<f1>", "<Nop>", opts_noremapsilent)
 -- )))
 
 -- Remap normal/visual & to preserve substitution flags (((
+
 keymap("n", "&", ":&&<CR>", opts_noremapsilent)
 keymap("x", "&", ":&&<CR>", opts_noremapsilent)
+
 -- )))
 
 -- Normal -- (((
@@ -57,10 +59,12 @@ keymap("n", "'", "`", opts_noremapsilent)
 -- keymap("n", "Y", "y$", opts_noremapsilent) -- default since nvim 0.6
 
 -- Navigate folds (((
+
 -- keymap("n", "zf", "zMzvzz", opts_noremapsilent)
 -- keymap("n", "zj", "zcjzOzz", opts_noremapsilent)
 -- keymap("n", "zk", "zckzOzz", opts_noremapsilent)
 keymap("n", "<Space>", "za", opts_noremapsilent)
+
 -- )))
 
 keymap("n", "<C-]>", "g<C-]>", opts_noremapsilent) -- show options if tag has multiple matches
@@ -77,15 +81,19 @@ keymap("n", "<C-]>", "g<C-]>", opts_noremapsilent) -- show options if tag has mu
 -- )))
 
 -- Insert -- (((
+
 keymap("i", "<f1>", "<nop>", opts_noremapsilent)
 keymap("i", "<c-c>", "<ESC>", opts_noremapsilent) -- CTRL-C doesn't trigger the InsertLeave autocmd . map to <ESC> instead.
+
 -- )))
 
 -- Visual -- (((
 
 -- Stay in indent mode in visual mode (((
+
 keymap("v", "<", "<gv", opts_noremapsilent)
 keymap("v", ">", ">gv", opts_noremapsilent)
+
 -- )))
 
 keymap("v", "y", "myy`ymy", opts_noremapsilent)
@@ -104,14 +112,8 @@ keymap("x", ">", ">gv", opts_noremapsilent)
 
 -- )))
 
--- Command -- (((
-
-keymap("c", "<c-n>", "<down>", opts_noremapsilent)
-keymap("c", "<c-p>", "<up>", opts_noremapsilent)
-
--- )))
-
 -- Terminal -- (((
+
 -- Better terminal navigation
 
 -- keymap("t", "<Esc>", "<C-\\><C-n>", term_opts)
@@ -122,6 +124,16 @@ keymap("c", "<c-p>", "<up>", opts_noremapsilent)
 
 -- )))
 
+-- vimscript mappings (((
+
 -- https://www.reddit.com/r/neovim/comments/sf0hmc/im_really_proud_of_this_mapping_i_came_up_with/?sort=old
 -- nnoremap g. /\V\C<C-r>"<CR>cgn<C-a><Esc>
-vim.cmd[[nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec printf("norm %sgn%s", v:operator, v:operator != 'd' ? '<c-a>':'')<cr>]]
+vim.cmd[[
+nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec printf("norm %sgn%s", v:operator, v:operator != 'd' ? '<c-a>':'')<cr>
+
+cnoremap <C-N> <Down>
+cnoremap <C-P> <Up>
+
+]]
+
+-- )))
