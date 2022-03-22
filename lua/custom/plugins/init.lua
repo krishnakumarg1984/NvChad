@@ -16,6 +16,7 @@ return {
   { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } },
   { "klen/nvim-config-local" },  -- , event = { "CursorHold" } }
   { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#", "n", "N" } },
+  { "williamboman/nvim-lsp-installer" }, -- simple to use language server installer
   { "anuvyklack/pretty-fold.nvim" },
   { "ahmedkhalf/project.nvim" },  -- , event = { "CursorHold" } }
   { "winston0410/range-highlight.nvim",  requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } }, -- , event = { "CmdlineEnter", "CmdwinLeave" } }
