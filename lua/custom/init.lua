@@ -6,57 +6,104 @@ vim.cmd [[
 let g:ale_disable_lsp = 1
 let g:python3_host_prog = 'python3'
 
+" backup settings (((
+
 set backupdir-=.
 set backupext='vimbackup'
+
+" )))
+
+" 'c*' (settings that start with the character 'c') (((
 
 set clipboard=""
 set cmdheight=2
 set colorcolumn=121
 set confirm
 
+" )))
+
+" fold settings (((
+
 set foldcolumn=auto:5
 set foldlevel=2
 set foldlevelstart=2
 
+" )))
+
+" chars 'g-l'* settings (settings that start with the characters 'g' through 'l') (((
+
 set guifont="monospace:h17"
+
 set infercase
 set iskeyword+=-
+
 set lazyredraw
 set list
+
+" )))
+
+" indent settings (((
 
 set copyindent
 set nosmartindent
 set preserveindent
 
+" )))
+
+" popup menu settings (((
+
 set pumheight=10
 set pumwidth=35
+
+" )))
+
+" line-number settings (((
 
 set relativenumber
 set numberwidth=4
 
-set report=0
+" )))
+
+" match highlighting settings  (((
 
 set showmatch
 set matchtime=3
 
+" )))
+
+" scroll settings (((
+
 set scrolloff=2
 set sidescrolloff=8
+
+" )))
+
+" tabstop settings (((
 
 set softtabstop=2
 set tabstop=2
 
-set showtabline=2
+" )))
+
+" updatecount/updatetime settings (((
 
 set updatecount=100
 set updatetime=275
 
-set winaltkeys=no
+" )))
+
+" commented-out settings (((
 
 " set ruler
 " set whichwrap+=<,>,[,],h,l
 " let mapleader="\\"
 " :let mapleader=""
 " :let maplocalleader=""
+
+" set complete=.,w,b,u,t,kspell,U,s,k,d,],i ". through t is the default. . = current buffer. w  = any other windows, b = any other buffers opened, u = unopened buffers, t = tags, i = current and included files
+" set complete+=U,s,k,kspell,]
+
+" )))
 
 " Linebreak settings (((
 
@@ -101,10 +148,6 @@ set suffixes+=*.info,*.aux,*.log,*/.log,*.dvi,*.bbl,*.out,*/.out,*.old,*.bak
 
 " )))
 
-" set pumwidth=35
-" set complete=.,w,b,u,t,kspell,U,s,k,d,],i ". through t is the default. . = current buffer. w  = any other windows, b = any other buffers opened, u = unopened buffers, t = tags, i = current and included files
-" set complete+=U,s,k,kspell,]
-
 " Custom 'Underline' command using user-defined function (((
 
 " https://vim.fandom.com/wiki/Underline_using_dashes_automatically
@@ -114,73 +157,76 @@ function! s:Underline(chars) abort
     let uline = repeat(chars, (nr_columns / len(chars)) + 1)
     put =strpart(uline, 0, nr_columns)
 endfunction
+
 command! -nargs=? Underline call s:Underline(<q-args>)
+
 " )))
 
-  " Formatlistpat settings (((
+" Formatlistpat settings (((
 
-  " A pattern that is used to recognize a list header.  This is used for the "n" flag in 'formatoptions'. The pattern must match exactly the text that will be the indent for the line below it.  You can use |/\ze| to mark the end of the match while still checking more characters.  There must be a character following the pattern, when it matches the whole line it is handled like there is no match. The default recognizes a number, followed by an optional punctuation character and white space.
+" A pattern that is used to recognize a list header.  This is used for the "n" flag in 'formatoptions'. The pattern must match exactly the text that will be the indent for the line below it.  You can use |/\ze| to mark the end of the match while still checking more characters.  There must be a character following the pattern, when it matches the whole line it is handled like there is no match. The default recognizes a number, followed by an optional punctuation character and white space.
 
-  set formatlistpat=^\\s*                " Optional leading whitespace
-  set formatlistpat+=[                   " Start character class
-  set formatlistpat+=\\[({]\\?           " |  Optionally match opening punctuation
-  set formatlistpat+=\\(                 " |  Start group
-  set formatlistpat+=[0-9]\\+            " |  |  Numbers
-  set formatlistpat+=\\\|                " |  |  or
-  set formatlistpat+=[a-zA-Z]\\+         " |  |  Letters
-  set formatlistpat+=\\)                 " |  End group
-  set formatlistpat+=[\\]:.)}            " |  Closing punctuation
-  set formatlistpat+=]                   " End character class
-  set formatlistpat+=\\s\\+              " One or more spaces
-  set formatlistpat+=\\\|                " or
-  set formatlistpat+=^\\s*[-–+o*•]\\s\\+ " Bullet points
+set formatlistpat=^\\s*                " Optional leading whitespace
+set formatlistpat+=[                   " Start character class
+set formatlistpat+=\\[({]\\?           " |  Optionally match opening punctuation
+set formatlistpat+=\\(                 " |  Start group
+set formatlistpat+=[0-9]\\+            " |  |  Numbers
+set formatlistpat+=\\\|                " |  |  or
+set formatlistpat+=[a-zA-Z]\\+         " |  |  Letters
+set formatlistpat+=\\)                 " |  End group
+set formatlistpat+=[\\]:.)}            " |  Closing punctuation
+set formatlistpat+=]                   " End character class
+set formatlistpat+=\\s\\+              " One or more spaces
+set formatlistpat+=\\\|                " or
+set formatlistpat+=^\\s*[-–+o*•]\\s\\+ " Bullet points
 
-  " )))
+" )))
 
-  " Global g:tex_ settings ((((((
+" Global g:tex_ settings (((
 
-  " let g:tex_no_error=1   " The <tex.vim> supports lexical error checking of various sorts.  Thus, although the error checking is ofttimes very useful, it can indicate errors where none actually are.  If this proves to be a problem for you, you may put in your vimrc the following statement: > let g:tex_no_error=1 and all error checking by <syntax/tex.vim> will be suppressed.
-  let g:tex_comment_nospell= 1
-  let g:tex_conceal='abdmgs'
-  let g:tex_flavor = 'latex'
-  let g:tex_fold_enabled=1
-  let g:tex_isk='48-57,a-z,A-Z,192-255,:,_'
+" let g:tex_no_error=1   " The <tex.vim> supports lexical error checking of various sorts.  Thus, although the error checking is ofttimes very useful, it can indicate errors where none actually are.  If this proves to be a problem for you, you may put in your vimrc the following statement: > let g:tex_no_error=1 and all error checking by <syntax/tex.vim> will be suppressed.
+let g:tex_comment_nospell= 1
+let g:tex_conceal='abdmgs'
+let g:tex_flavor = 'latex'
+let g:tex_fold_enabled=1
+let g:tex_isk='48-57,a-z,A-Z,192-255,:,_'
 
-  " ))))))
+" )))
 
-  " Disable unnecessary internal plugins (((
-	
-  let g:did_install_default_menus = 1
-  let g:did_install_syntax_menu   = 1
-  let g:did_indent_on             = 1
-  " let g:do_filetype_lua           = 1
-  let g:did_load_filetypes        = 1
-  let g:skip_loading_mswin        = 1
-  let g:loaded_matchparen         = 1
-	let g:loaded_remote_plugins     = 1
-  let g:netrw_nogx                = 1
+" Disable unnecessary internal plugins (((
 
-  " )))
+" let g:do_filetype_lua           = 1
+let g:did_install_default_menus = 1
+let g:did_install_syntax_menu   = 1
+let g:did_load_filetypes        = 1
+let g:skip_loading_mswin        = 1
+let g:loaded_matchparen         = 1
+let g:loaded_remote_plugins     = 1
+let g:netrw_nogx                = 1
 
-  " Folding-related global(g:) variables for various languages (((
+" let g:did_indent_on             = 1    " raises an error: Vim(doautocmd):E216: No such group or event: filetypeindent FileType markdown
 
-  let g:markdown_folding        = 1
-  let g:markdown_enable_folding = 1
-  let g:tex_fold_enabled        = 1
-  let g:vimsyn_folding          = 'af'
-  let g:xml_syntax_folding      = 1
-  let g:javaScript_fold         = 1
-  let g:sh_fold_enabled         = 7
-  let g:ruby_fold               = 1
-  let g:perl_fold               = 1
-  let g:perl_fold_blocks        = 1
-  let g:r_syntax_folding        = 1
-  let g:rust_fold               = 1
-  let g:php_folding             = 1
+" )))
 
-  let g:cursorhold_updatetime   = 100
+" Folding-related global(g:) variables for various languages (((
 
-  " )))
+let g:markdown_folding        = 1
+let g:markdown_enable_folding = 1
+let g:tex_fold_enabled        = 1
+let g:vimsyn_folding          = 'af'
+let g:xml_syntax_folding      = 1
+let g:javaScript_fold         = 1
+let g:sh_fold_enabled         = 7
+let g:ruby_fold               = 1
+let g:perl_fold               = 1
+let g:perl_fold_blocks        = 1
+let g:r_syntax_folding        = 1
+let g:rust_fold               = 1
+let g:php_folding             = 1
+
+let g:cursorhold_updatetime   = 100
+
+" )))
 
 " Diff-mode settings (((
 
@@ -202,6 +248,7 @@ set listchars+=nbsp:␣
 " )))
 
 " Title (GUI/terminal) settings (((
+
 set title
 set titleold="Terminal"
 
@@ -219,8 +266,6 @@ set titlestring+=\ -\ %{v:progname} " program name
 
 " )))
 
-set virtualedit+=block " Allow movement beyond buffer text only in visual block mode
-
 " Settings for grepprg and grepformat (((
 
 if executable('rg')
@@ -232,31 +277,41 @@ endif
 
 " Other non-conditional settings/declarations (set xxxxxxx) (((
 
-set fileformats=unix,dos,mac  " This gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer:
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " Probably overridden by status-line plugins
-
+" let g:cursorhold_updatetime = 100
 " set colorcolumn=99999 " fixes indentline for now
-set cpoptions-=a      " Stop the :read command from annoyingly setting the alternative buffer
-set guioptions-=e
-set isfname-={,}
-set isfname-==
 " set path+=**          " Search current directory's whole tree
+set cpoptions-=a      " Stop the :read command from annoyingly setting the alternative buffer
+set fileformats=unix,dos,mac  " This gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer:
+set guioptions-=e
+set isfname-==
+set isfname-={,}
+set report=0
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " Probably overridden by status-line plugins
+set showtabline=2
+set tags=~/.cache/tags
+set virtualedit+=block " Allow movement beyond buffer text only in visual block mode
+set winaltkeys=no
 
 " )))
 
 " Mappings (((
 
 " https://github.com/neovim/neovim/issues/9953
+" https://github.com/neovim/neovim/issues/9953#issuecomment-487399273
 " if &wildoptions == 'pum'
 "     cnoremap <expr> <up>   pumvisible() ? "<C-p>" : "\<up>"
 "     cnoremap <expr> <down> pumvisible() ? "<C-n>" : "\<down>"
 " endif
-" 
-" cnoremap <c-n> <down>
-" cnoremap <c-p> <up>
+
+cnoremap <C-N> <Down>
+cnoremap <C-P> <Up>
 
 " Replace :w with :up
 cnoreabbrev <expr> w getcmdtype() == ":" && getcmdline() == 'w' ? 'up' : 'w'
+
+" https://www.reddit.com/r/neovim/comments/sf0hmc/im_really_proud_of_this_mapping_i_came_up_with/?sort=old
+" nnoremap g. /\V\C<C-r>"<CR>cgn<C-a><Esc>
+nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec printf("norm %sgn%s", v:operator, v:operator != 'd' ? '<c-a>':'')<cr>
 
 " nnoremaps (((
 
@@ -315,10 +370,10 @@ endif
 " Custom highlights (((
 " highlight clear SignColumn     " SignColumn should match background,SignColumn is the column where |signs| are displayed
 " highlight Comment cterm=italic gui=italic
-" 
+"
 " highlight link HelpBar Normal
 " highlight link HelpStar Normal
-" 
+"
 " highlight OverLength ctermfg=0 ctermbg=3
 " match OverLength /\%121v/
 
@@ -334,18 +389,20 @@ set shortmess-=x  " Uses [unix format], [dos format], [mac format] etc. instead 
 
 " )))
 
+" neovim-remote settings (((
+
 if executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
   let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
 
-set tags=~/.cache/tags
-
-" let g:cursorhold_updatetime = 100
+" )))
 
 ]]
 
 -- )))
+
+-- lua-style settings (((
 
 require "custom.plugins.filetype"
 
@@ -360,6 +417,8 @@ require "custom.plugins.neoscroll"
 require "custom.plugins.config_local"
 require "custom.plugins.nvim_cmake"
 require "custom.plugins.whichkey"
+
+-- )))
 
 -- MAPPINGS
 -- local map = require("core.utils").map

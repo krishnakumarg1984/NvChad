@@ -123,17 +123,3 @@ keymap("x", ">", ">gv", opts_noremapsilent)
 -- keymap("t", "<A-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- )))
-
--- vimscript mappings (((
-
--- https://www.reddit.com/r/neovim/comments/sf0hmc/im_really_proud_of_this_mapping_i_came_up_with/?sort=old
--- nnoremap g. /\V\C<C-r>"<CR>cgn<C-a><Esc>
-vim.cmd[[
-nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec printf("norm %sgn%s", v:operator, v:operator != 'd' ? '<c-a>':'')<cr>
-
-cnoremap <C-N> <Down>
-cnoremap <C-P> <Up>
-
-]]
-
--- )))
