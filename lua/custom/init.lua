@@ -315,8 +315,9 @@ nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec print
 
 " nnoremaps (((
 
-noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
-noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+" https://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/?sort=new
+" noremap <silent> <expr> j (v:count ? 'j' : 'gj')
+" noremap <silent> <expr> k (v:count ? 'k' : 'gk')
 
 " )))
 
