@@ -130,25 +130,13 @@ return packer.startup(function(use)
 
   -- Autocompletion and snippets support (((
 
-  use { "hrsh7th/cmp-cmdline" } -- cmdline completions
   use { "quangnguyen30192/cmp-nvim-tags" }
 
   -- )))
 
   -- LSP (((
 
-  use { "neovim/nvim-lspconfig" } -- enable LSP
-  -- https://pastebin.com/grWDJXVq
-  use {
-    "jose-elias-alvarez/null-ls.nvim",
-    wants = "plenary.nvim",
-    cmd = "NullLsLoad",
-    module = "null-ls",
-  }
   use { "tami5/lspsaga.nvim", after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
-
-  use { "folke/trouble.nvim", cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" } }
-  use { "stevearc/aerial.nvim" } -- , cmd = { "AerialToggle", "AerialToggle!", "AerialOpen", "AerialOpen!", "AerialClose", "AerialPrev", "AerialNext", "AerialPrevUp", "AerialNextUp", "AerialGo", "AerialTreeOpen", "AerialTreeOpen!", "AerialTreeClose", "AerialTreeClose!", "AerialTreeToggle", "AerialTreeToggle!", "AerialTreeOpenAll", "AerialTreeCloseAll", "AerialTreeSyncFolds", "AerialInfo" } }  -- , event = { "CursorHold" } }
 
   -- use { "narutoxy/dim.lua", requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" }, }
 

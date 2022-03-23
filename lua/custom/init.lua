@@ -27,6 +27,7 @@ set confirm
 set foldcolumn=auto:5
 set foldlevel=2
 set foldlevelstart=2
+" set foldopen=all  " helps to avoid automatic closing of previously open folds when returning to a buffer
 
 " )))
 
@@ -288,7 +289,8 @@ cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
 
 " Replace :w with :up
-cnoreabbrev <expr> w getcmdtype() == ":" && getcmdline() == 'w' ? 'up' : 'w'
+" https://vi.stackexchange.com/questions/16173/how-to-remap-w-to-up
+cnoreabbrev <expr> w getcmdtype() == ":" && getcmdline() =~ '^w$' ? 'up' : 'w'
 
 " https://www.reddit.com/r/neovim/comments/sf0hmc/im_really_proud_of_this_mapping_i_came_up_with/?sort=old
 " nnoremap g. /\V\C<C-r>"<CR>cgn<C-a><Esc>
@@ -305,7 +307,7 @@ nnoremap g. :call setreg('/',substitute(@", '\%x00', '\\n', 'g'))<cr>:exec print
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
-noremap <c-w>" <c-w>t<c-w>K     " change vertical to horizontal with -
+noremap <c-w>" <c-w>t<c-w>K    " change vertical to horizontal with -
 noremap <c-w>% <c-w>t<c-w>H    " change horizontal to vertical with %
 
 " Remap 'gx' for opening the URL under cursor on macOS (((
@@ -324,10 +326,16 @@ if has('macunix')
 endif
 " )))
 
+" https://vi.stackexchange.com/questions/18777/move-to-first-word-of-paragraph-in-vim-with-and
+" nnoremap <expr><silent> { (col('.')==1 && len(getline(line('.')-1))==0? '2{j' : '{j')
+" nnoremap <expr><silent> } (col('.')==1 && len(getline(line('.')-1))==0? '2}k' : '}k')
+
 " Make jump-selections work better in visual block mode (((
+
 xnoremap <expr>  G   'G' . virtcol('.') . "\|"
 xnoremap <expr>  }   '}' . virtcol('.') . "\|"
 xnoremap <expr>  {   '{' . virtcol('.') . "\|"
+
 " )))
 
 " Substitute word under cursor and dot repeat (((
@@ -410,24 +418,18 @@ require "custom.plugins.filetype"
 
 require "custom.keymaps"
 require "custom.autocommands"
-require "custom.plugins.project"
+require "custom.plugins.aerial"
 require "custom.plugins.hlslens"
-require "custom.plugins.pretty_fold"
-require "custom.plugins.range_highlight"
 require "custom.plugins.mini"
 require "custom.plugins.neoscroll"
-require "custom.plugins.config_local"
 require "custom.plugins.nvim_cmake"
-require "custom.plugins.whichkey"
 require "custom.plugins.lsp.null-ls"
-require "custom.plugins.stabilize"
+require "custom.plugins.nvim_config_local"
+require "custom.plugins.pretty_fold"
+require "custom.plugins.project"
+require "custom.plugins.range_highlight"
+require "custom.plugins.trouble"
+require "custom.plugins.whichkey"
+-- require "custom.plugins.stabilize"
 
 -- )))
-
--- MAPPINGS
--- local map = require("core.utils").map
-
--- NOTE: the 4th argument in the map function is be a table i.e options but its most likely un-needed so dont worry about it
-
--- map("n", "<leader>cc", ":Telescope <CR>")
--- map("n", "<leader>q", ":q <CR>")
