@@ -1,18 +1,5 @@
 -- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-require "user.gitsigns"
-require "user.trouble"
--- require "user.dd"
--- require "user.goto_preview"
-require "user.aerial"
-require "user.pretty_fold"
-require "user.range_highlight"
-require "user.neoscroll"
-
--- require "user.stabilize"
--- require "user.pqf"
-require "user.config_local"
-require "user.nvim_cmake"
 require "user.cmp" -- heavy
 require "user.autopairs" -- after cmp
 require "user.lsp" -- 'lsp' is a folder with detailed config with an entry-point file 'init.lua'
