@@ -1,7 +1,5 @@
 -- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-require "user.telescope"
-require "user.octo"
 require "user.gitsigns"
 require "user.trouble"
 -- require "user.dd"

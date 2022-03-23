@@ -1,4 +1,4 @@
--- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
+-- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
 -- Vimscript-style settings (((
 vim.cmd [[
@@ -428,15 +428,16 @@ require "custom.plugins.nvim_config_local"
 require "custom.plugins.pretty_fold"
 require "custom.plugins.project"
 require "custom.plugins.range_highlight"
+require "custom.plugins.telescope_fzf"
 require "custom.plugins.treesitter_context"
 require "custom.plugins.trouble"
 require "custom.plugins.whichkey"
-require "custom.plugins.telescope_fzf"
 
 -- require "custom.plugins.ale"
 -- require "custom.plugins.colorscheme"
 -- require "custom.plugins.editorconfig"
 -- require "custom.plugins.gutentags"
+-- require "custom.plugins.octo"
 -- require "custom.plugins.stabilize"
 -- require "custom.plugins.toggleterm"
 
