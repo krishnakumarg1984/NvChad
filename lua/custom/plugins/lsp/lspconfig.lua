@@ -19,8 +19,14 @@ M.setup_lsp = function(attach, capabilities)
   }
 
   lsp_installer.on_server_ready(function(server)
+    local lsp_handlers_present, lsp_handlers = pcall(require, "custom.plugins.lsp.handlers")
+    if lsp_handlers_present then
+      Custom_on_attach = lsp_handlers.on_attach
+    else
+      Custom_on_attach = attach
+    end
     local opts = {
-      on_attach = require("custom.plugins.lsp.handlers").on_attach,
+      on_attach = Custom_on_attach,
       capabilities = capabilities,
       flags = {
         debounce_text_changes = 150,
