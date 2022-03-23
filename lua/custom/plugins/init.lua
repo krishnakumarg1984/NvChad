@@ -6,6 +6,7 @@ return {
   { "jeffkreeftmeijer/vim-numbertoggle", event = "InsertEnter" },
   { "lervag/vimtex", ft = "tex" },
   { "svban/YankAssassin.vim", event = { "CursorHold" } },
+  { "tpope/vim-unimpaired", keys = { "[", "]" } },
   -- { "dstein64/vim-startuptime", cmd = { "StartupTime" } },
   -- { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } },
   -- { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim

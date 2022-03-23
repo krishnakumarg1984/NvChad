@@ -275,25 +275,6 @@ endif
 
 " )))
 
-" Other non-conditional settings/declarations (set xxxxxxx) (((
-
-" let g:cursorhold_updatetime = 100
-" set colorcolumn=99999 " fixes indentline for now
-" set path+=**          " Search current directory's whole tree
-set cpoptions-=a      " Stop the :read command from annoyingly setting the alternative buffer
-set fileformats=unix,dos,mac  " This gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer:
-set guioptions-=e
-set isfname-==
-set isfname-={,}
-set report=0
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " Probably overridden by status-line plugins
-set showtabline=2
-set tags=~/.cache/tags
-set virtualedit+=block " Allow movement beyond buffer text only in visual block mode
-set winaltkeys=no
-
-" )))
-
 " Mappings (((
 
 " https://github.com/neovim/neovim/issues/9953
@@ -396,6 +377,26 @@ if executable('nvr')
   let $VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
   let $GIT_EDITOR = "nvr -cc split --remote-wait +'set bufhidden=wipe'"
 endif
+
+" )))
+
+" Other non-conditional settings/declarations (set xxxxxxx) (((
+
+" let g:cursorhold_updatetime = 100
+" set colorcolumn=99999 " fixes indentline for now
+" set path+=**          " Search current directory's whole tree
+set cpoptions-=a      " Stop the :read command from annoyingly setting the alternative buffer
+set fileformats=unix,dos,mac  " This gives the end-of-line (<EOL>) formats that will be tried when starting to edit a new buffer and when reading a file into an existing buffer:
+set guioptions-=e
+set isfname-==
+set isfname-={,}
+set report=0
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " Probably overridden by status-line plugins
+set showtabline=2
+set tags=~/.cache/tags
+set timeoutlen=500  " milliseconds
+set virtualedit+=block " Allow movement beyond buffer text only in visual block mode
+set winaltkeys=no
 
 " )))
 
