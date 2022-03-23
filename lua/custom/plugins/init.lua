@@ -14,6 +14,7 @@ return {
   { "echasnovski/mini.nvim" },
   { "karb94/neoscroll.nvim" },  -- , keys = { "C-d" } }
   { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } },
+  { "jose-elias-alvarez/null-ls.nvim", after = "nvim-lspconfig", cmd = "NullLsLoad" },
   { "klen/nvim-config-local" },  -- , event = { "CursorHold" } }
   { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#", "n", "N" } },
   { "williamboman/nvim-lsp-installer" }, -- simple to use language server installer
@@ -23,3 +24,4 @@ return {
   { "folke/which-key.nvim" },  -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
   { "pianocomposer321/yabs.nvim" },
 }
+

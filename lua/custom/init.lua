@@ -418,6 +418,7 @@ require "custom.plugins.neoscroll"
 require "custom.plugins.config_local"
 require "custom.plugins.nvim_cmake"
 require "custom.plugins.whichkey"
+require "custom.plugins.lsp.null-ls"
 
 -- )))
 
