@@ -5,4 +5,4 @@ if not status_ok then
   return
 end
 
-range_highlight.setup({})
+range_highlight.setup {}

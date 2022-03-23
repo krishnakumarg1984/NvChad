@@ -5,4 +5,4 @@ if not status_ok then
   return
 end
 
-filetype.setup({})
+filetype.setup {}

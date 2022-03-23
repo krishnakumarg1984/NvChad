@@ -11,7 +11,7 @@ M.setup_lsp = function(attach, capabilities)
   lsp_installer.settings {
     ui = {
       icons = {
-        server_installed = "﫟" ,
+        server_installed = "﫟",
         server_pending = "",
         server_uninstalled = "✗",
       },
@@ -48,7 +48,7 @@ M.setup_lsp = function(attach, capabilities)
     -- end
 
     if server.name == "sumneko_lua" then
-      local sumneko_opts = require("custom.plugins.lsp.settings.sumneko_lua")
+      local sumneko_opts = require "custom.plugins.lsp.settings.sumneko_lua"
       opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
 
@@ -57,12 +57,12 @@ M.setup_lsp = function(attach, capabilities)
   end)
 
   local function install_server(server)
-    local lsp_installer_servers = require("nvim-lsp-installer.servers")
+    local lsp_installer_servers = require "nvim-lsp-installer.servers"
     local server_available, requested_server = lsp_installer_servers.get_server(server)
     if server_available then
       if not requested_server:is_installed() then
         -- Queue the server to be installed
-        requested_server:install()  -- the install window shall pop up
+        requested_server:install() -- the install window shall pop up
         -- requested_server:install(server) -- will install in background
       end
     end
@@ -93,7 +93,6 @@ M.setup_lsp = function(attach, capabilities)
   for _, server in ipairs(servers) do
     install_server(server)
   end
-
 end
 
 return M

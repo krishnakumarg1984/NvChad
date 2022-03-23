@@ -1,5 +1,3 @@
--- Just an example, supposed to be placed in /lua/custom/
-
 local M = {}
 
 M.options = {
@@ -28,11 +26,11 @@ if custom_plugins_present then
   M.plugins = {
     status = default_plugins_to_keep,
 
-   	options = {
+    options = {
       lspconfig = {
         setup_lspconf = "custom.plugins.lsp.lspconfig",
       },
-		},
+    },
 
     install = userPlugins,
   }

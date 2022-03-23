@@ -1,9 +1,9 @@
 -- vim: foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-local status_ok_plenary, Path = pcall(require, "plenary.path")
-if not status_ok_plenary then
-  return
-end
+-- local status_ok_plenary, Path = pcall(require, "plenary.path")
+-- if not status_ok_plenary then
+--   return
+-- end
 
 local status_ok_cmake, cmake = pcall(require, "cmake")
 if not status_ok_cmake then

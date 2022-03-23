@@ -3,7 +3,6 @@
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
-
   -- Protected call to lspconfig (((
 
   local status_ok, _ = pcall(require, "lspconfig")

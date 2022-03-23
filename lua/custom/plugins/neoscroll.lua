@@ -5,7 +5,7 @@ if not status_ok then
   return
 end
 
-neoscroll.setup({})
+neoscroll.setup {}
 
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}

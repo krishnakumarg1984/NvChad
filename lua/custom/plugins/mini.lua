@@ -5,4 +5,4 @@ if not status_ok then
   return
 end
 
-mini_surround.setup({})
+mini_surround.setup {}

@@ -7,8 +7,8 @@ return packer.startup(function(use)
 
   -- Treesitter & related plugins (((
 
-  use { "nvim-treesitter/nvim-treesitter-refactor", after = { "nvim-treesitter" }, }
-  use { "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" }, }
+  use { "nvim-treesitter/nvim-treesitter-refactor", after = { "nvim-treesitter" } }
+  use { "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } }
   use { "romgrk/nvim-treesitter-context", after = { "nvim-treesitter" } }
   use { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } }
   -- https://github.com/David-Kunz/treesitter-unit/
@@ -92,7 +92,6 @@ return packer.startup(function(use)
 
   use { "akinsho/toggleterm.nvim", cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" } }
 
-  
   -- Telescope (((
 
   -- octo.nvim ((( -- or  nvim-telescope/telescope-github.nvim
@@ -141,23 +140,21 @@ return packer.startup(function(use)
   use { "neovim/nvim-lspconfig" } -- enable LSP
   -- https://pastebin.com/grWDJXVq
   use {
-  "jose-elias-alvarez/null-ls.nvim",
-  wants = "plenary.nvim",
-  cmd = "NullLsLoad",
-  module = "null-ls",
+    "jose-elias-alvarez/null-ls.nvim",
+    wants = "plenary.nvim",
+    cmd = "NullLsLoad",
+    module = "null-ls",
   }
-  use { "tami5/lspsaga.nvim",  after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
+  use { "tami5/lspsaga.nvim", after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
 
-  
   use { "folke/trouble.nvim", cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" } }
-  use { "stevearc/aerial.nvim" }  -- , cmd = { "AerialToggle", "AerialToggle!", "AerialOpen", "AerialOpen!", "AerialClose", "AerialPrev", "AerialNext", "AerialPrevUp", "AerialNextUp", "AerialGo", "AerialTreeOpen", "AerialTreeOpen!", "AerialTreeClose", "AerialTreeClose!", "AerialTreeToggle", "AerialTreeToggle!", "AerialTreeOpenAll", "AerialTreeCloseAll", "AerialTreeSyncFolds", "AerialInfo" } }  -- , event = { "CursorHold" } }
+  use { "stevearc/aerial.nvim" } -- , cmd = { "AerialToggle", "AerialToggle!", "AerialOpen", "AerialOpen!", "AerialClose", "AerialPrev", "AerialNext", "AerialPrevUp", "AerialNextUp", "AerialGo", "AerialTreeOpen", "AerialTreeOpen!", "AerialTreeClose", "AerialTreeClose!", "AerialTreeToggle", "AerialTreeToggle!", "AerialTreeOpenAll", "AerialTreeCloseAll", "AerialTreeSyncFolds", "AerialInfo" } }  -- , event = { "CursorHold" } }
 
   -- use { "narutoxy/dim.lua", requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" }, }
 
   -- )))
 
--- )))
-
+  -- )))
 end)
 
 -- )))

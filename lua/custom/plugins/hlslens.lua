@@ -5,4 +5,4 @@ if not status_ok then
   return
 end
 
-hlslens.setup({ calm_down = true })
+hlslens.setup { calm_down = true }

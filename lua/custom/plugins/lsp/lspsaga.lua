@@ -5,11 +5,11 @@ if not lspsaga_status_ok then
   return
 end
 
-lspsaga.setup({})
+lspsaga.setup {}
 -- scroll down hover doc or scroll in definition preview
 
-vim.cmd([[
+vim.cmd [[
 nnoremap <silent> <A-f> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>
 " scroll up hover doc
 nnoremap <silent> <A-b> <cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>
-]])
+]]

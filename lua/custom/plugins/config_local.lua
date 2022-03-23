@@ -5,4 +5,4 @@ if not status_ok then
   return
 end
 
-config_local.setup({})
+config_local.setup {}
