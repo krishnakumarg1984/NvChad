@@ -1,6 +1,5 @@
 -- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-require "user.treesitter"
 require "user.treesitter_context"
 
 require "user.comment"
