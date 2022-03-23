@@ -431,6 +431,7 @@ require "custom.plugins.range_highlight"
 require "custom.plugins.treesitter_context"
 require "custom.plugins.trouble"
 require "custom.plugins.whichkey"
+require "custom.plugins.telescope_fzf"
 
 -- require "custom.plugins.ale"
 -- require "custom.plugins.colorscheme"

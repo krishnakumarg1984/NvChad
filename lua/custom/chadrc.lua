@@ -40,6 +40,7 @@ if custom_plugins_present then
       nvim_treesitter = PluginConfs.treesitter,
       nvim_tree = PluginConfs.nvimtree,
       indent_blankline = PluginConfs.blankline,
+      telescope = PluginConfs.telescope,
     },
 
     install = userPlugins,

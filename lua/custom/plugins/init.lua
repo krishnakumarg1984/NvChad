@@ -28,6 +28,7 @@ return {
   { "ahmedkhalf/project.nvim" }, -- , event = { "CursorHold" } }
   { "winston0410/range-highlight.nvim", requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } }, -- , event = { "CmdlineEnter", "CmdwinLeave" } }
   -- { "luukvbaal/stabilize.nvim" },
+  { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
   { "folke/trouble.nvim", cmd = { "Trouble", "TroubleClose", "TroubleToggle", "TroubleRefresh" } },
   { "folke/which-key.nvim" }, -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
   { "pianocomposer321/yabs.nvim" },

@@ -96,15 +96,6 @@ return packer.startup(function(use)
   }
   -- )))
 
-  -- telescope-fzf-native (((
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
-    requires = { { "nvim-telescope/telescope.nvim" }, { "nvim-lua/plenary.nvim" } },
-    -- after = { "telescope.nvim" }
-  }
-  -- )))
-
   -- )))
 
   -- Git (((
@@ -126,9 +117,7 @@ return packer.startup(function(use)
 
   -- LSP (((
 
-  use { "tami5/lspsaga.nvim", after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
-
-  -- use { "narutoxy/dim.lua", requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" }, }
+  -- use { "tami5/lspsaga.nvim", after = "nvim-lspconfig", event = { "CursorHold" } } -- , event = "InsertEnter" })
 
   -- )))
 
@@ -198,6 +187,7 @@ google keep (proprietary)
 -- use { "kazhala/close-buffers.nvim", cmd = {} }
 -- use { "andersevenrud/cmp-tmux" }
 -- use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
+-- use { "narutoxy/dim.lua", requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" }, }
 -- use { "chipsenkbeil/distant.nvim" }
 -- use { "stevearc/dressing.nvim" }
 -- use { "ii14/exrc.vim" } -- "jenterkin/vim-autosource", "embear/vim-localvimrc", "LucHermitte/local_vimrc", "thinca/vim-localrc"
