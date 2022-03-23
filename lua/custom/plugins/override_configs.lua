@@ -360,4 +360,52 @@ M.gitsigns = {
 
 -- )))
 
+-- (((
+
+M.cmp = {
+  view = {
+    entries = "native",
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      local icons = require "plugins.configs.lspkind_icons"
+      vim_item.kind = string.format("%s %s", icons[vim_item.kind], vim_item.kind)
+      vim_item.abbr = string.sub(vim_item.abbr, 1, 40)
+      vim_item.menu = ({
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Lua]",
+        buffer = "[BUF]",
+      })[entry.source.name]
+
+      return vim_item
+    end,
+  },
+  sources = {
+    -- { name = "nvim_lsp" },
+    { name = "nvim_lsp", max_item_count = 15 },
+    { name = "luasnip" },
+    { name = "buffer", keyword_length = 2 },
+    { name = "nvim_lua" },
+    { name = "path", keyword_length = 3 },
+    -- { name = 'fuzzy_path', keyword_length = 2, option = {fd_timeout_msec = 500} },
+    -- { name = "tags", max_item_count = 10 },
+    -- { name = "tmux" },
+    -- { name = "nuspell", max_item_count = 7, priority = 100 },
+    -- { name = "spell", max_item_count = 7 },
+    -- { name = "look", max_item_count = 7, keyword_length = 2, option = { convert_case = true, loud = true } },
+    -- { name = "dictionary", max_item_count = 7, keyword_length = 2 },
+  },
+  confirm_option = {
+    select = false,
+  },
+  documentation = {
+    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  },
+  experimental = {
+    ghost_text = true, -- this feature conflicts with copilot.vim's preview.
+  },
+}
+
+-- )))
+
 return M

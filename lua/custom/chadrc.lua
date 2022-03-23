@@ -42,6 +42,7 @@ if custom_plugins_present then
       indent_blankline = PluginConfs.blankline,
       telescope = PluginConfs.telescope,
       gitsigns = PluginConfs.gitsigns,
+      nvim_cmp = PluginConfs.cmp,
     },
 
     install = userPlugins,
