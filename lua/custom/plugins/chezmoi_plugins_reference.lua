@@ -5,16 +5,6 @@
 return packer.startup(function(use)
   -- List of plugins here (((
 
-  -- Treesitter & related plugins (((
-
-  use { "nvim-treesitter/nvim-treesitter-refactor", after = { "nvim-treesitter" } }
-  use { "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } }
-  use { "romgrk/nvim-treesitter-context", after = { "nvim-treesitter" } }
-  use { "JoosepAlviste/nvim-ts-context-commentstring", after = { "nvim-treesitter" } }
-  -- https://github.com/David-Kunz/treesitter-unit/
-
-  -- )))
-
   -- Colorscheme plugins (((
 
   use { "rebelot/kanagawa.nvim" }
@@ -187,115 +177,116 @@ google keep (proprietary)
 
 -- ipython/jupyter vim plugins (((
 
+-- use("jupyter-vim/jupyter-vim")
+-- use("untitled-ai/jupyter_ascending")
 -- use "goerz/jupytext.vim"
 -- use { 'dccsillag/magma-nvim', run = ':UpdateRemotePlugins' } -- need to set up mappings
 -- use("bfredl/nvim-ipy")
--- use("jupyter-vim/jupyter-vim")
--- use("untitled-ai/jupyter_ascending")
 -- use({ "hanschen/vim-ipython-cell", requires = { "jpalardy/vim-slime" } })
 
 -- )))
 
 -- Pre-filled out packer calls (((
 
--- use { "akinsho/bufferline.nvim" }
--- use { "andersevenrud/cmp-tmux" }
--- use { "andymass/vim-matchup", event = "BufWinEnter" }
--- use { "blackCauldron7/surround.nvim" }
--- use { "chentau/marks.nvim", keys = { "m", "dm" }, cmd = { "MarksToggleSigns", "MarksListBuf", "MarksListGlobal", "MarksListAll", "MarksQFListBuf", "MarksQFListGlobal", "MarksQFListAll" } }
--- use { "chipsenkbeil/distant.nvim" }
--- use { "cljoly/telescope-repo.nvim" }
--- use { "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } }
--- use { "folke/todo-comments.nvim" } -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
--- use { "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } }
--- use { "folke/zen-mode.nvim", cmd = "ZenMode" }
--- use { "gauteh/vim-cppman", ft = { "c", "cpp" }, cmd = { "Cppman" } }
--- use { "ggandor/lightspeed.nvim", requires = "tpope/vim-repeat", }
--- use { "goolord/alpha-nvim" }
 -- use { "https://gitlab.com/yorickpeterse/nvim-dd", event = { "CursorHold" } }
 -- use { "https://gitlab.com/yorickpeterse/nvim-pqf" }
--- use { "https://gitlab.com/yorickpeterse/nvim-pqf", event = { "QuickFixCmdPre", "QuickFixCmdPost" } }
--- use { "ii14/exrc.vim" } -- "jenterkin/vim-autosource", "embear/vim-localvimrc", "LucHermitte/local_vimrc", "thinca/vim-localrc"
--- use { "j-hui/fidget.nvim" }
--- use { "kazhala/close-buffers.nvim", cmd = {} }
--- use { "kevinhwang91/nvim-bqf", ft = "qf", event = { "CursorHold" } }
--- use { "Konfekt/FastFold" }
--- use { "Konfekt/vim-sentence-chopper" }
--- use { "kosayoda/nvim-lightbulb" }
--- use { "kwkarlwang/bufresize.nvim" }
--- use { "ldelossa/litee-calltree.nvim", requires = { "ldelossa/litee.nvim" } }
--- use { "lewis6991/spellsitter.nvim" }
--- use { "ludovicchabant/vim-gutentags", event = { "CursorHold" } } -- , event = "BufWinEnter" }
--- use { "luukvbaal/stabilize.nvim" }
--- use { "mfussenegger/nvim-lint" }
--- use { "mg979/tasks.vim" }
--- use { "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } }
--- use { "norcalli/nvim-colorizer.lua" }
--- use { "ntpeters/vim-better-whitespace" }
+-- use { "goolord/alpha-nvim" }
+-- use { "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } }
+-- use { "akinsho/bufferline.nvim" }
 -- use { "numtostr/BufOnly.nvim", cmd = { "BufOnly" } }
+-- use { "kwkarlwang/bufresize.nvim" }
+-- use { "kazhala/close-buffers.nvim", cmd = {} }
+-- use { "andersevenrud/cmp-tmux" }
+-- use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
+-- use { "chipsenkbeil/distant.nvim" }
+-- use { "stevearc/dressing.nvim" }
+-- use { "ii14/exrc.vim" } -- "jenterkin/vim-autosource", "embear/vim-localvimrc", "LucHermitte/local_vimrc", "thinca/vim-localrc"
+-- use { "Konfekt/FastFold" }
+-- use { "j-hui/fidget.nvim" }
+-- use { "rmagatti/goto-preview", event = { "CursorHold" } }
+-- use { "mizlan/iswap.nvim", requires = { { "nvim-treesitter" } } }
+-- use { "ggandor/lightspeed.nvim", requires = "tpope/vim-repeat", }
+-- use { "ldelossa/litee-calltree.nvim", requires = { "ldelossa/litee.nvim" } }
+-- use { "onsails/lspkind-nvim" }
+-- use { "chentau/marks.nvim", keys = { "m", "dm" }, cmd = { "MarksToggleSigns", "MarksListBuf", "MarksListGlobal", "MarksListAll", "MarksQFListBuf", "MarksQFListGlobal", "MarksQFListAll" } }
+-- use { "TimUntersberger/neogit", cmd = { "Neogit" } }
+-- use { "nyngwang/NeoZoom.lua" }
+-- use { "kevinhwang91/nvim-bqf", ft = "qf", event = { "CursorHold" } }
+-- use { "norcalli/nvim-colorizer.lua" }
+-- use { "s1n7ax/nvim-comment-frame" }
+-- use { "kosayoda/nvim-lightbulb" }
+-- use { "mfussenegger/nvim-lint" }
+-- use { "petertriho/nvim-scrollbar" }
+-- use { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" }
+-- use { "tyru/open-browser.vim", event = "BufWinEnter" }
+-- use { "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } }
+-- use { "lewis6991/spellsitter.nvim" }
+-- use { "luukvbaal/stabilize.nvim" }
+-- use { "blackCauldron7/surround.nvim" }
+-- use { "wellle/targets.vim" }
+-- use { "mg979/tasks.vim" }
 -- use { "nvim-telescope/telescope-media-files.nvim" }
 -- use { "nvim-telescope/telescope-packer.nvim" }
--- use { "nyngwang/NeoZoom.lua" }
--- use { "onsails/lspkind-nvim" }
--- use { "petertriho/nvim-scrollbar" }
--- use { "petRUShka/vim-opencl", ft = { "opencl" } }  -- note: slow plugin on remote systems
--- use { "puremourning/vimspector", fn = "vimspector#Launch", disable = false }
--- use { "rmagatti/goto-preview", event = { "CursorHold" } }
--- use { "s1n7ax/nvim-comment-frame" }
--- use { "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } } -- also a telescope extension
--- use { "sgur/vim-editorconfig", event = "BufWinEnter" }
--- use { "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" }
--- use { "stevearc/dressing.nvim" }
--- use { "TimUntersberger/neogit", cmd = { "Neogit" } }
--- use { "tpope/vim-fugitive", event = "BufWinEnter" }
--- use { "tpope/vim-unimpaired", event = "BufWinEnter" }
--- use { "tweekmonster/wstrip.vim" }
--- use { "tyru/open-browser.vim", event = "BufWinEnter" }
--- use { "urbainvaes/vim-ripple" }
--- use { "weirongxu/plantuml-previewer.vim", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } }
--- use { "wellle/targets.vim" }
+-- use { "cljoly/telescope-repo.nvim" }
+-- use { "folke/todo-comments.nvim" } -- :ToDoQuickFix, :ToDoTrouble, :ToDoTelescope,
+-- use { "folke/twilight.nvim", cmd = { "ZenMode", "Twilight", "TwilightEnable" } }
 -- use { "wsdjeg/vim-assembly" }
+-- use { "ntpeters/vim-better-whitespace" }
+-- use { "gauteh/vim-cppman", ft = { "c", "cpp" }, cmd = { "Cppman" } }
+-- use { "sgur/vim-editorconfig", event = "BufWinEnter" }
+-- use { "tpope/vim-fugitive", event = "BufWinEnter" }
+-- use { "ludovicchabant/vim-gutentags", event = { "CursorHold" } } -- , event = "BufWinEnter" }
+-- use { "andymass/vim-matchup", event = "BufWinEnter" }
+-- use { "petRUShka/vim-opencl", ft = { "opencl" } }  -- note: slow plugin on remote systems
+-- use { "urbainvaes/vim-ripple" }
+-- use { "Konfekt/vim-sentence-chopper" }
+-- use { "scrooloose/vim-slumlord", requires = { { "aklt/plantuml-syntax" }, { "tyru/open-browser.vim" } } } -- also a telescope extension
+-- use { "tpope/vim-unimpaired", event = "BufWinEnter" }
+-- use { "puremourning/vimspector", fn = "vimspector#Launch", disable = false }
+-- use { "tweekmonster/wstrip.vim" }
+-- use { "folke/zen-mode.nvim", cmd = "ZenMode" }
 
 -- )))
 
 -- www links to other interesting plugins (((
 
--- https://git.sr.ht/~whynothugo/lsp_lines.nvim
--- https://github.com/4513ECHO/vim-readme-viewer
--- https://github.com/abecodes/tabout.nvim
--- https://github.com/anufrievroman/vim-angry-reviewer
--- https://github.com/beauwilliams/focus.nvim
--- https://github.com/bennypowers/nvim-regexplainer
--- https://github.com/booperlv/nvim-gomove
--- https://github.com/brymer-meneses/grammar-guard.nvim
--- https://github.com/dhruvasagar/vim-buffer-history
+-- https://github.com/jceb/blinds.nvim
+-- https://github.com/monaqa/dial.nvim
 -- https://github.com/elihunter173/dirbuf.nvim
 -- https://github.com/Furkanzmc/firvish.nvim
--- https://github.com/gbprod/substitute.nvim
--- https://github.com/iamcco/markdown-preview.nvim
--- https://github.com/jalvesaq/zotcite
--- https://github.com/jceb/blinds.nvim
--- https://github.com/JoseConseco/vim-case-change
--- https://github.com/Julian/vim-textobj-variable-segment
--- https://github.com/kamykn/spelunker.vim
--- https://github.com/kitten/prosemd-lsp
--- https://github.com/lukas-reineke/lsp-format.nvim
--- https://github.com/marklcrns/vim-smartq
--- https://github.com/monaqa/dial.nvim
--- https://github.com/NMAC427/guess-indent.nvim
--- https://github.com/nyngwang/NeoNoName.lua
--- https://github.com/ojroques/vim-oscyank
--- https://github.com/Pocco81/MerelyFmt.nvim/tree/dev
--- https://github.com/rcarriga/vim-ultest
--- https://github.com/rlane/pounce.nvim
--- https://github.com/ruifm/gitlinker.nvim
--- https://github.com/Sangdol/mintabline.vim
--- https://github.com/sindrets/winshift.nvim
--- https://github.com/stefandtw/quickfix-reflector.vim
--- https://github.com/svermeulen/vim-subversive
--- https://github.com/TC72/telescope-tele-tabby.nvim
+-- https://github.com/beauwilliams/focus.nvim
 -- https://github.com/ThePrimeagen/git-worktree.nvim/
+-- https://github.com/ruifm/gitlinker.nvim
+-- https://github.com/brymer-meneses/grammar-guard.nvim
+-- https://github.com/NMAC427/guess-indent.nvim
+-- https://github.com/lukas-reineke/lsp-format.nvim
+-- https://git.sr.ht/~whynothugo/lsp_lines.nvim
+-- https://github.com/iamcco/markdown-preview.nvim
+-- https://github.com/Pocco81/MerelyFmt.nvim/tree/dev
+-- https://github.com/Sangdol/mintabline.vim
+-- https://github.com/nyngwang/NeoNoName.lua
+-- https://github.com/booperlv/nvim-gomove
+-- https://github.com/bennypowers/nvim-regexplainer
+-- https://github.com/rlane/pounce.nvim
+-- https://github.com/kitten/prosemd-lsp
+-- https://github.com/stefandtw/quickfix-reflector.vim
+-- https://github.com/kamykn/spelunker.vim
+-- https://github.com/gbprod/substitute.nvim
+-- https://github.com/abecodes/tabout.nvim
+-- https://github.com/TC72/telescope-tele-tabby.nvim
+-- https://github.com/David-Kunz/treesitter-unit/
+-- https://github.com/anufrievroman/vim-angry-reviewer
 -- https://github.com/tpope/vim-apathy
+-- https://github.com/dhruvasagar/vim-buffer-history
+-- https://github.com/JoseConseco/vim-case-change
+-- https://github.com/ojroques/vim-oscyank
+-- https://github.com/4513ECHO/vim-readme-viewer
+-- https://github.com/marklcrns/vim-smartq
+-- https://github.com/svermeulen/vim-subversive
+-- https://github.com/Julian/vim-textobj-variable-segment
+-- https://github.com/rcarriga/vim-ultest
+-- https://github.com/sindrets/winshift.nvim
+-- https://github.com/jalvesaq/zotcite
 
 -- )))
 

@@ -32,6 +32,10 @@ if custom_plugins_present then
       },
     },
 
+    default_plugin_config_replace = {
+      nvim_treesitter = "custom.plugins.treesitter",
+    },
+
     install = userPlugins,
   }
 end
@@ -75,9 +79,9 @@ M.mappings = {
 }
 
 M.mappings.plugins = {
-  comment = {
-    toggle = "gc",
-  },
+  -- comment = {
+  --   toggle = "gc",
+  -- },
 }
 
 return M
