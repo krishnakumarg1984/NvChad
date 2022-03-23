@@ -22,6 +22,7 @@ return {
   { "anuvyklack/pretty-fold.nvim" },
   { "ahmedkhalf/project.nvim" }, -- , event = { "CursorHold" } }
   { "winston0410/range-highlight.nvim", requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } }, -- , event = { "CmdlineEnter", "CmdwinLeave" } }
+  { "luukvbaal/stabilize.nvim" },
   { "folke/which-key.nvim" }, -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
   { "pianocomposer321/yabs.nvim" },
 }

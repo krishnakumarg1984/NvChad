@@ -404,7 +404,7 @@ set winaltkeys=no
 
 -- )))
 
--- lua-style settings (((
+-- lua-style settings and plugin-setup calls (((
 
 require "custom.plugins.filetype"
 
@@ -420,6 +420,7 @@ require "custom.plugins.config_local"
 require "custom.plugins.nvim_cmake"
 require "custom.plugins.whichkey"
 require "custom.plugins.lsp.null-ls"
+require "custom.plugins.stabilize"
 
 -- )))
 
