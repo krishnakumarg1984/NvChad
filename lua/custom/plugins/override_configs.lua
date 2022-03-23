@@ -2,6 +2,8 @@
 
 local M = {}
 
+-- M.treesitter (((
+
 vim.cmd [[
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
@@ -143,6 +145,9 @@ M.treesitter = {
   }, -- 'textobjects' table ends
 }
 
+-- )))
+
+-- M.nvimtree (((
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
 vim.g.nvim_tree_git_hl = 1
 vim.g.nvim_tree_show_icons = {
@@ -229,5 +234,33 @@ M.nvimtree = {
   -- disable_window_picker = 0,
   -- root_folder_modifier = ":t",
 }
+-- )))
+
+-- (((
+
+M.blankline = {
+  buftype_exclude = { "terminal", "nofile" },
+  blankline_filetype_exclude = {
+    "",
+    "aerial",
+    "alpha",
+    "dashboard",
+    "help",
+    "lsp-installer",
+    "lspinfo",
+    "neogitstatus",
+    "nvchad_cheatsheet",
+    "NvimTree",
+    "packer",
+    "startify",
+    "TelescopePrompt",
+    "TelescopeResults",
+    "terminal",
+    "Trouble",
+  },
+  -- show_current_context = true,
+}
+
+-- )))
 
 return M

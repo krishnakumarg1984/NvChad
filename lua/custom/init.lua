@@ -437,5 +437,6 @@ require "custom.plugins.whichkey"
 -- require "custom.plugins.editorconfig"
 -- require "custom.plugins.gutentags"
 -- require "custom.plugins.stabilize"
+-- require "custom.plugins.toggleterm"
 
 -- )))

@@ -38,7 +38,8 @@ if custom_plugins_present then
     -- consider replacing config for comment.nvim with that at custom.plugins.comment and install & configure treesitter-context-commentstring if context commenting does not work
     default_plugin_config_replace = {
       nvim_treesitter = PluginConfs.treesitter,
-      -- nvim_tree = PluginConfs.nvimtree,
+      nvim_tree = PluginConfs.nvimtree,
+      indent_blankline = PluginConfs.blankline,
     },
 
     install = userPlugins,
