@@ -1,4 +1,7 @@
+-- vim: foldlevel=0:
+
 local M = {}
+PluginConfs = require "custom.plugins.override_configs"
 
 M.options = {
   mapleader = ",",
@@ -32,8 +35,10 @@ if custom_plugins_present then
       },
     },
 
+    -- consider replacing config for comment.nvim with that at custom.plugins.comment and install & configure treesitter-context-commentstring if context commenting does not work
     default_plugin_config_replace = {
-      nvim_treesitter = "custom.plugins.treesitter",
+      nvim_treesitter = PluginConfs.treesitter,
+      -- nvim_tree = PluginConfs.nvimtree,
     },
 
     install = userPlugins,
@@ -79,9 +84,9 @@ M.mappings = {
 }
 
 M.mappings.plugins = {
-  -- comment = {
-  --   toggle = "gc",
-  -- },
+  comment = {
+    toggle = "gc",
+  },
 }
 
 return M

@@ -1,16 +1,5 @@
 -- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-require "user.treesitter_context"
-
-require "user.comment"
-require "user.colorscheme"
-require "user.ale"
--- require "user.gutentags"
-require "user.asynctasks_asyncrun"
--- require "user.editorconfig"
-require "user.project"
-require "user.nvim-tree"
--- require "user.neotree"
 -- require "user.bufferline"
 require "user.toggleterm"
 

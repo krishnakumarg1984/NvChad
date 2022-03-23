@@ -428,9 +428,14 @@ require "custom.plugins.nvim_config_local"
 require "custom.plugins.pretty_fold"
 require "custom.plugins.project"
 require "custom.plugins.range_highlight"
--- require "custom.plugins.treesitter_context"
+require "custom.plugins.treesitter_context"
 require "custom.plugins.trouble"
 require "custom.plugins.whichkey"
+
+-- require "custom.plugins.ale"
+-- require "custom.plugins.colorscheme"
+-- require "custom.plugins.editorconfig"
+-- require "custom.plugins.gutentags"
 -- require "custom.plugins.stabilize"
 
 -- )))
