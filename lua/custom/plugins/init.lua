@@ -9,19 +9,18 @@ return {
   -- { "dstein64/vim-startuptime", cmd = { "StartupTime" } },
   -- { "tweekmonster/startuptime.vim", cmd = { "StartupTime" } },
   -- { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
-  { "sudormrfbin/cheatsheet.nvim", cmd = { "Cheatsheet", "CheatsheetEdit" }, },
-  { "ellisonleao/glow.nvim", ft = { "markdown", "lsp_markdown", "rmd"}, cmd = { "Glow", "GlowInstall" } },
+  { "sudormrfbin/cheatsheet.nvim", cmd = { "Cheatsheet", "CheatsheetEdit" } },
+  { "ellisonleao/glow.nvim", ft = { "markdown", "lsp_markdown", "rmd" }, cmd = { "Glow", "GlowInstall" } },
   { "echasnovski/mini.nvim" },
-  { "karb94/neoscroll.nvim" },  -- , keys = { "C-d" } }
+  { "karb94/neoscroll.nvim" }, -- , keys = { "C-d" } }
   { "Shatur/neovim-cmake", ft = { "c", "cpp", "cmake", "fortran" }, requires = { "mfussenegger/nvim-dap" } },
   { "jose-elias-alvarez/null-ls.nvim", after = "nvim-lspconfig", cmd = "NullLsLoad" },
-  { "klen/nvim-config-local" },  -- , event = { "CursorHold" } }
+  { "klen/nvim-config-local" }, -- , event = { "CursorHold" } }
   { "kevinhwang91/nvim-hlslens", keys = { "/", "?", "q/", "q?", "*", "#", "g*", "g#", "n", "N" } },
   { "williamboman/nvim-lsp-installer" }, -- simple to use language server installer
   { "anuvyklack/pretty-fold.nvim" },
-  { "ahmedkhalf/project.nvim" },  -- , event = { "CursorHold" } }
-  { "winston0410/range-highlight.nvim",  requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } }, -- , event = { "CmdlineEnter", "CmdwinLeave" } }
-  { "folke/which-key.nvim" },  -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
+  { "ahmedkhalf/project.nvim" }, -- , event = { "CursorHold" } }
+  { "winston0410/range-highlight.nvim", requires = { "winston0410/cmd-parser.nvim", event = "CmdlineEnter" } }, -- , event = { "CmdlineEnter", "CmdwinLeave" } }
+  { "folke/which-key.nvim" }, -- , keys = { "<space>", "z", "c", "v", "d", "g", "<", ">", "@", "y", "\"", "<leader>", "<localleader>", "\\" } }
   { "pianocomposer321/yabs.nvim" },
 }
-
