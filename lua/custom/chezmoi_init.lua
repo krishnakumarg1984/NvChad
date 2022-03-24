@@ -1,6 +1,5 @@
 -- vim: ft=lua:foldmarker=(((,))):foldmethod=marker:foldlevel=0:shiftwidth=2:softtabstop=2:tabstop=2
 
-require "user.autopairs" -- after cmp
 require "user.lsp" -- 'lsp' is a folder with detailed config with an entry-point file 'init.lua'
 -- require "user.lightbulb"
 require "user.lsp_signature"
