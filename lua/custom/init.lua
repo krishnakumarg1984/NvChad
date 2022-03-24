@@ -4,6 +4,7 @@
 vim.cmd [[
 
 let g:ale_disable_lsp = 1
+" let g:code_action_menu_show_diff = v:true
 let g:python3_host_prog = 'python3'
 
 " backup settings (((
@@ -425,6 +426,8 @@ require "custom.plugins.neoscroll"
 require "custom.plugins.lsp.null-ls"
 require "custom.plugins.nvim_cmake"
 require "custom.plugins.nvim_config_local"
+require "custom.plugins.nvim_lightbulb"
+require "custom.plugins.nvim_window"
 require "custom.plugins.pretty_fold"
 require "custom.plugins.project"
 require "custom.plugins.range_highlight"

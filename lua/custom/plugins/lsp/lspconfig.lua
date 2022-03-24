@@ -20,7 +20,7 @@ M.setup_lsp = function(attach, capabilities)
 
   lsp_installer.on_server_ready(function(server)
     local lsp_handlers_present, lsp_handlers = pcall(require, "custom.plugins.lsp.handlers")
-    lsp_handlers.setup()
+    lsp_handlers.custom_setup()
     if lsp_handlers_present then
       Custom_on_attach = lsp_handlers.on_attach
     else

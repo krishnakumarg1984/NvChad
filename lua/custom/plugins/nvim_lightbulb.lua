@@ -5,9 +5,6 @@ if not status_ok then
   return
 end
 
-lightbulb.setup {
-  sign = { enabled = false },
-  virtual_text = { enabled = true },
-}
+lightbulb.setup {}
 
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]]
