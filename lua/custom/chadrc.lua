@@ -44,6 +44,11 @@ if custom_plugins_present then
       gitsigns = PluginConfs.gitsigns,
       nvim_cmp = PluginConfs.cmp,
       nvim_autopairs = PluginConfs.autopairs,
+      signature = {
+        doc_lines = 7,
+        max_height = 10, -- max height of signature floating_window, if content is more than max_height, you can scroll down to view the hiding contents
+        auto_close_after = 15,
+      },
     },
 
     install = userPlugins,
