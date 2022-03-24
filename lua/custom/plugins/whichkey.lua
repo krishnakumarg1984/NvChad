@@ -27,7 +27,7 @@ local setup = {
   },
   -- add operators that will trigger motion and text object completion
   -- to enable all native operators, set the preset / operators plugin above
-  -- operators = { gc = "Comments" },
+  operators = { gc = "Comments" },
   -- key_labels = {
   --   -- override the label used to display some keys. It doesn't effect WK in any other way.
   --   -- For example:
@@ -57,7 +57,7 @@ local setup = {
     spacing = 3, -- spacing between columns
     align = "left", -- align columns left, center or right
   },
-  ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
+  -- ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = true, -- show help message on the command line when the popup is visible
   triggers = "auto", -- automatically setup triggers
@@ -134,10 +134,10 @@ local mappings = {
       "Diff",
     },
     f = { "<cmd>Telescope git_files<cr>", "Repo files" },
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    -- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+    -- l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
     R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
@@ -174,7 +174,7 @@ local mappings = {
       "Prev Diagnostic",
     },
     l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.diagnostic.set_loclist()<cr>", "Quickfix" },
+    -- q = { "<cmd>lua vim.diagnostic.set_loclist()<cr>", "Quickfix" },
     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
     S = {
@@ -198,7 +198,7 @@ local mappings = {
   t = {
     name = "Telescope Search",
     a = { "<cmd>Telescope autocommands<cr>", "Autocommands" },
-    b = { "<cmd>Telescope builtin<cr>", "Builtins" },
+    -- b = { "<cmd>Telescope builtin<cr>", "Builtins" },
     B = { "<cmd>Telescope current_buffer_tags<cr>", "Tags in Current Buffer" },
     c = { "<cmd>Telescope colorscheme<cr>", "Pick colorscheme" },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
