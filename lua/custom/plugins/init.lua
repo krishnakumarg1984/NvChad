@@ -14,7 +14,7 @@ return {
   -- { "nvim-lua/popup.nvim" }, -- An implementation of the Popup API from vim in Neovim
   { "stevearc/aerial.nvim" }, -- , cmd = { "AerialToggle", "AerialToggle!", "AerialOpen", "AerialOpen!", "AerialClose", "AerialPrev", "AerialNext", "AerialPrevUp", "AerialNextUp", "AerialGo", "AerialTreeOpen", "AerialTreeOpen!", "AerialTreeClose", "AerialTreeClose!", "AerialTreeToggle", "AerialTreeToggle!", "AerialTreeOpenAll", "AerialTreeCloseAll", "AerialTreeSyncFolds", "AerialInfo" } }  -- , event = { "CursorHold" } }
   { "sudormrfbin/cheatsheet.nvim", cmd = { "Cheatsheet", "CheatsheetEdit" } },
-  -- { "p00f/clangd_extensions.nvim", ft = { "c", "cpp", "cuda" } },
+  { "p00f/clangd_extensions.nvim", ft = { "c", "cpp", "cuda" } },
   { "hrsh7th/cmp-cmdline", after = "nvim-cmp" }, -- cmdline completions
   { "ellisonleao/glow.nvim", ft = { "markdown", "lsp_markdown", "rmd" }, cmd = { "Glow", "GlowInstall" } },
   { "echasnovski/mini.nvim" },
