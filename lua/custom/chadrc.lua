@@ -43,6 +43,7 @@ if custom_plugins_present then
       telescope = PluginConfs.telescope,
       gitsigns = PluginConfs.gitsigns,
       nvim_cmp = PluginConfs.cmp,
+      nvim_autopairs = PluginConfs.autopairs,
     },
 
     install = userPlugins,
